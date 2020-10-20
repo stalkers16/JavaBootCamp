@@ -3,6 +3,7 @@
  */
 package sef.module3.activity;
 
+
 /**
  * @author 
  *
@@ -11,9 +12,8 @@ public class Calculator {
 		
 	public static void main(String[] args) {
 		
-	int x = 10;
+	int x = 2;
 	int y = 5;
-	
 	int[] nums = {1, 2, 3, 4};
 	
 	System.out.println("Addition - " + add(x,y));
@@ -28,18 +28,19 @@ public class Calculator {
 		int sum = x + y;
 		return sum;
 	}
-
+	
+	
 	private static int subtract(int x, int y) {
 		int diff = 0;
-		if (x > y) {
-			// complete the code
-		} else {
-			// complete the code
+		if (x < 0) {
+			diff = x-y;
+		}else {
+			diff = y-x;	
 		}
 
 		return diff;
 	}
-
+//
 	private static int multiply(int[] numbers) {
 		int temp = 1;
 
@@ -49,13 +50,16 @@ public class Calculator {
 		return temp;
 
 	}
+	
 
-	private static int divide(int x, int y) {
-		int divValue = 0;
-		if (x == 0 || y == 0) {
-			// complete the code
+	private static float divide(int x, float y) {
+		float divValue = 0;
+		if (y == 0) {
+			System.out.println("Error! Dividing with zero is not allowed");
+			
 		} else {
-			// complete the code
+			divValue = x / (float)y;
+			
 		}
 		return divValue;
 
