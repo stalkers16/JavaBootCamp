@@ -2,31 +2,30 @@ package sef.module6.activity;
 
 public class Rectangle extends Shape {
 	
-	private int length;
-	private int breadth;
+	private double length;
+	private double breadth;
 	
-	public Rectangle() {
-		super(color);
-		this.length = 0;
-		this.breadth = 0;
+	Rectangle() {	
+		
 	}
 	
-//	public Rectangle(length, breadth) { // why it is treated as duplicate of general constructor??? 
-//	this.length = length;
-//	this.breadth = breadth;
-//	}
+	public Rectangle(double length, double breadth) {  
+	//super.color = col;
+	this.length = length;
+	this.breadth = breadth;
+	}
 
-	public void setLength(int length) {
+	public void setLength(double length) {
 		this.length = length;
 	}
-	public  int getLength() {
+	public  double getLength() {
 		return length;
 	}
 	
-	public void setBreadth(int breadth) {
+	public void setBreadth(double breadth) {
 		this.length = breadth;
 	}
-	public int getBreath() {
+	public double getBreath() {
 		return breadth;
 	}
 	
@@ -34,14 +33,14 @@ public class Rectangle extends Shape {
 
 	@Override
 	public double calculateArea() {
-		int area;
-		area = (length * breadth);
+		//double area;
+		double area = (length * breadth);
 		return area;
 	}
 
 	@Override
 	public double calculatePerimeter() {
-		int perimeter;
+		double perimeter;
 		perimeter = 2 * (length + breadth); 
 		return perimeter;
 	}
