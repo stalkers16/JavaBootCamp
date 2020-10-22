@@ -15,10 +15,12 @@ void catchMeIfYouCan()
 	
 	for(int i=0;i<=10;i++)
 	{
+		try {
 		System.out.println(arr[i]);
+		}catch (Exception e) {
 	}
 	
-	
+	}
 	
 	System.out.println("This should get printed even if there is an exception");
 	
