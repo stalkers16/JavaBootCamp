@@ -19,10 +19,11 @@ public class CheckedExceptionSample {
 			//1 - Instantiate reader and pass fileName as a parameter
 			reader = new FileReader(fileName);
 			
-			
+		//2 - catch FileNotFoundException 	
 		}catch (FileNotFoundException e) {
 			System.out.println("file " + fileName + " not found");
 		}
-		//2 - catch FileNotFoundException 
+		
+		
 	}
 }

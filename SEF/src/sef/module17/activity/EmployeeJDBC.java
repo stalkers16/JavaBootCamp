@@ -12,9 +12,9 @@ public class EmployeeJDBC {
 	public Connection createConnection()
 	{
 		Connection con=null;
-		String url = "jdbc:mysql://localhost/activity";
+		String url = "jdbc:mysql://localhost/employees";
 		String user = "root";
-		String pass = "adbd1234";
+		String pass = "Skolopendra@16";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -37,16 +37,22 @@ public class EmployeeJDBC {
 		Employee emp=null;
 		try {
 		// 1 - Create a PreparedStatement with a query
-		
-
+			PreparedStatement pStmt = con.prepareStatement("Select * from emplyees where emp_no=?")
+					
 		// 2 - Search for the given id
+			pStmt.setString(1, id);
 		
 
 		// 3 - Execute this query
 		
-		
+			ResultSet rs =pStmt.executeQuery()
 		// 4 - If resultset is not null, then initialize emp object with data 
-		
+			if(rs.next()) {
+				emp = new Employee();
+				emp.setId(rs.getString(1));
+				emp.setFirstName(rs.getString(2));
+				emp.setLastName(rs.getString(3));
+			}	
 		con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
